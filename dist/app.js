@@ -14,6 +14,7 @@ loginForm.addEventListener('submit', function(event) {
     dataType: 'json',contentType: 'application/json',
     data: JSON.stringify({ username, password }),
     success: function(data) {
+      localStorage.setItem('token', data.accessToken);
       window.location.href = '/fav_animals/animals.html';
 
     },
