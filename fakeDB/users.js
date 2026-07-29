@@ -1,5 +1,6 @@
-
-
+const bcrypt = require('bcryptjs');
+const saltRounds = 10;
+const salt = bcrypt.genSaltSync(saltRounds)
 const users = [
     {
       id: 1,
@@ -14,6 +15,9 @@ const users = [
       animal:"owl"
     }
   ];
-  
+users.forEach(user =>{
+  const hashedPassword = bcrypt.hashSync(user.password, salt);
+  user.password = hashedPassword;
+});
 module.exports = users;
   
