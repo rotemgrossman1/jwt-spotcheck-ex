@@ -4,7 +4,6 @@ const users = require('../../fakeDB/users');
 
 const secretKey = 'my_secret_key';
 
-
 router.post('/login', (req, res) => {
   res.send({ msg:"logged in?" });
 });
